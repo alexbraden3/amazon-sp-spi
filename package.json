@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "prettier": "prettier --write src index.js && prisma format"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.15.0",
+    "app-module-path": "^2.2.0",
+    "aws4": "^1.12.0",
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "qs": "^6.11.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "prisma": "^4.15.0"
+  }
+}

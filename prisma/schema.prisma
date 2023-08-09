@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AmazonProduct {
+  id        String   @id @default(cuid()) @db.VarChar(30)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  asin      String   @unique
+  category  String?
+  name      String?
+  url       String
+  image     String?
+  upc       String?
+  model     String?
+  mpn       String?
+
+  numberOfSellersOnListing Int?
+  inStock                  Boolean?
+  isAmazonSellingOnListing Boolean?
+
+  currentListingPrice      Float?
+  last30DayAvgListingPrice Float?
+  last90DayAvgListingPrice Float?
+
+  currentSalesPerMonth Float?
+  last30DayAvgSales    Float?
+  last90DayAvgSales    Float?
+
+  currentBSR      Int?
+  last30DayAvgBSR Int?
+  last90DayAvgBSR Int?
+}
